@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>artifact 01 · jejemon sub-culture · kuwentong y2k</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        box-sizing: border-box;
+        padding-top: env(safe-area-inset-top, 0px);
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+        --bg: #efebe6;
+        --box: #ffffff;
+        --blue: #d9531e;
+        --panel: #f5a05a;
+        --btn: #fbc791;
+        --btn-ink: #a63a0f;
+        --muted: #a39a90;
+        --m1: #d9531e;
+        --m2: #f5a05a;
+        --m3: #fbc791;
+        --m4: #fde6cf;
+      }
+      :root {
+        color-scheme: light;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-padding-top: env(safe-area-inset-top, 0px);
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        padding: 36px 16px 40px;
+        background: var(--bg);
+        color: var(--blue);
+        font-family: "DotGothic16", "Courier New", monospace;
+        font-size: 15px;
+        line-height: 1.55;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
+        position: relative;
+        overflow-x: hidden;
+      }
+      #mosaic {
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+      }
+      #mosaic i {
+        position: absolute;
+        display: block;
+      }
+      .top,
+      .card,
+      .foot {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        max-width: 660px;
+      }
+      .top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        background: var(--box);
+        border: 3px solid var(--blue);
+        border-radius: 14px;
+        padding: 10px 18px;
+        font-size: 1.05rem;
+      }
+      .top mark {
+        background: var(--m3);
+        color: var(--blue);
+        padding: 0 6px;
+      }
+      .card {
+        display: flex;
+        flex-direction: column;
+        background: var(--box);
+        border: 3px solid var(--blue);
+        border-radius: 14px;
+        overflow: hidden;
+      }
+      .text {
+        display: contents;
+      }
+      .card .text > * {
+        margin-inline: 22px;
+        order: 4;
+      }
+      .card .text > h1 {
+        order: 0;
+        margin-top: 20px;
+      }
+      .card .text > .meta {
+        order: 1;
+        margin-bottom: 18px;
+      }
+      .card .text > .dash {
+        order: 3;
+        margin-top: 18px;
+      }
+      .card .text > .row:last-of-type {
+        margin-bottom: 22px;
+      }
+      h1 {
+        margin: 0;
+        text-align: center;
+        font-weight: 400;
+        font-size: 1.55rem;
+        line-height: 1.2;
+      }
+      .meta {
+        margin: 2px 0 0;
+        text-align: center;
+        font-size: 1.05rem;
+      }
+      .meta u {
+        text-underline-offset: 3px;
+      }
+      .dash {
+        margin: 10px 0 14px;
+        border: 0;
+        border-top: 2px dashed var(--blue);
+        opacity: 0.8;
+      }
+      .row {
+        margin: 0 0 10px;
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+      .row b {
+        font-weight: 400;
+        color: var(--blue);
+        text-shadow: 0.6px 0 0 currentColor;
+      }
+      .btns {
+        display: flex;
+        gap: 8px;
+        margin-top: 16px;
+        flex-wrap: wrap;
+      }
+      .btns a {
+        flex: 1 1 90px;
+        text-align: center;
+        text-decoration: none;
+        padding: 5px 10px;
+        background: var(--btn);
+        color: var(--btn-ink);
+        border-radius: 99px;
+        font-size: 0.9rem;
+      }
+      .btns a:hover {
+        filter: brightness(1.08);
+      }
+      a:focus-visible {
+        outline: 3px solid var(--blue);
+        outline-offset: 2px;
+      }
+      .photo {
+        order: 2;
+        background: var(--panel);
+        border-block: 3px solid var(--blue);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 30px 18px;
+      }
+      .photo .ring {
+        display: block;
+        line-height: 0;
+        border-radius: 16px;
+        border: 4px solid var(--blue);
+        background: var(--box);
+        overflow: hidden;
+        padding: 0;
+      }
+      .photo img {
+        display: block;
+        width: auto;
+        height: auto;
+        max-width: min(520px, calc(100vw - 80px));
+        max-height: 80vh;
+      }
+      .cap {
+        font-size: 0.75rem;
+        color: var(--muted);
+        text-align: center;
+        margin: 0;
+      }
+      .foot {
+        text-align: center;
+        color: var(--muted);
+        font-size: 0.85rem;
+      }
+      @media (max-width: 560px) {
+        .photo {
+          padding: 22px 12px;
+        }
+        .top {
+          font-size: 0.95rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="mosaic" aria-hidden="true"></div>
+
+    <header class="top">
+      <span>artifact no. <mark>01</mark> ✿</span>
+    </header>
+
+    <main class="card">
+      <section class="text">
+        <!-- 1. TITLE: artifact’s name -->
+        <h1>jejemon sub-culture</h1>
+        <p class="meta">year: 2010</p>
+        <hr class="dash" />
+
+        <!-- 3. CONTEXT: tell the story of the artifact -->
+        <p class="row"><b>context :</b></p>
+        <p class="row">
+          Originally a style of shorthand typing through the short messaging
+          service, in which each text message sent by a cellphone is limited to
+          160 characters, it became a popular cultural phenomenon in the
+          Philippines, extending to fashion and music characterized by a bold
+          style influenced by hip-hop.
+        </p>
+        <p class="row">
+          A youth trend around 2010 that influenced Filipino self-image through
+          colorful caps, loose clothes, hip-hop fashion, accessories, poses, and
+          unique texting styles. Young Filipinos became interested because it
+          was fun, creative, popular among friends, and easy to spread through
+          mobile phones and social media. However, Jejemons were also
+          stereotyped and judged because of their appearance, language, and
+          perceived social class.
+        </p>
+      </section>
+
+      <aside class="photo">
+        <!-- 2. IMAGE: image source or URL -->
+        <div class="ring">
+          <img
+            alt="A group of people posing and dressed in colorful, eccentric clothing, with some holding cassette tapes and CDs. The image has a playful and chaotic vibe, reflecting the Jejemon sub-culture."
+            src="jejemon.webp"
+          />
+        </div>
+      </aside>
+    </main>
+
+    <p class="foot">(kuwentong y2k · est. 2026 )</p>
+
+    <script>
+      (function () {
+        var host = document.getElementById("mosaic"),
+          S = 26;
+        var cols = ["--m1", "--m2", "--m3", "--m4"];
+        function rng(a) {
+          return function () {
+            a |= 0;
+            a = (a + 0x6d2b79f5) | 0;
+            var t = Math.imul(a ^ (a >>> 15), 1 | a);
+            t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+            return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+          };
+        }
+        function draw() {
+          var w = innerWidth,
+            h = Math.max(innerHeight, document.body.scrollHeight),
+            r = rng(7),
+            out = "";
+          var nc = Math.ceil(w / S),
+            nr = Math.ceil(h / S);
+          for (var y = 0; y < nr; y++) {
+            for (var x = 0; x < nc; x++) {
+              var dx = Math.abs((x + 0.5) / nc - 0.5) * 2,
+                dy = Math.abs((y + 0.5) / nr - 0.5) * 2;
+              var p = Math.max(dx * 1.15, dy * 0.55) - 0.25;
+              if (r() < p * 0.9) {
+                out +=
+                  '<i style="left:' +
+                  x * S +
+                  "px;top:" +
+                  y * S +
+                  "px;width:" +
+                  (S - 3) +
+                  "px;height:" +
+                  (S - 3) +
+                  "px;background:var(" +
+                  cols[Math.floor(r() * 4)] +
+                  ')"></i>';
+              }
+            }
+          }
+          host.style.height = h + "px";
+          host.innerHTML = out;
+        }
+        draw();
+        var t;
+        addEventListener("resize", function () {
+          clearTimeout(t);
+          t = setTimeout(draw, 150);
+        });
+      })();
+    </script>
+  </body>
+</html>
